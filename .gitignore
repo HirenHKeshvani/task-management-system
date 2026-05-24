@@ -11,3 +11,6 @@ application-local.properties
 .springBeans
 .sts4-cache/
 /.metadata/
+
+.DS_Store
+Thumbs.db
