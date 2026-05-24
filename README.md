@@ -20,15 +20,21 @@ Microservices-based backend system using Java Spring Boot.
 
 Create databases manually:
 
+```sql
 CREATE DATABASE authdb;
 CREATE DATABASE taskdb;
+```
 
 ## Run Auth Service
 
+```bash
 cd auth-service
 mvn spring-boot:run
+```
 
 ## Run Task Service
 
+```bash
 cd task-service
 mvn spring-boot:run
+```
