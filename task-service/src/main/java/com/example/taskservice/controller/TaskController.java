@@ -31,82 +31,60 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class TaskController {
 
-    private final TaskService taskService;
+	private final TaskService taskService;
 
-    @PostMapping("/api/v1/projects/{pid}/tasks")
-    public ResponseEntity<TaskResponse> create(
-            @PathVariable UUID pid,
-            @Valid @RequestBody CreateTaskRequest request
-    ) {
+	@PostMapping("/api/v1/projects/{pid}/tasks")
+	public ResponseEntity<TaskResponse> create(@PathVariable UUID pid, @Valid @RequestBody CreateTaskRequest request) {
 
-        return ResponseEntity.status(HttpStatus.CREATED)
-                .body(taskService.create(pid, request));
-    }
+		return ResponseEntity.status(HttpStatus.CREATED).body(taskService.create(pid, request));
+	}
 
-    @GetMapping("/api/v1/projects/{pid}/tasks")
-    public List<TaskResponse> getAll(
-            @PathVariable UUID pid,
-            @RequestParam(required = false) TaskStatus status
-    ) {
+	@GetMapping("/api/v1/projects/{pid}/tasks")
+	public List<TaskResponse> getAll(@PathVariable UUID pid, @RequestParam(required = false) TaskStatus status) {
 
-        return taskService.getAll(pid, status);
-    }
+		return taskService.getAll(pid, status);
+	}
 
-    @GetMapping("/api/v1/projects/{pid}/tasks/{tid}")
-    public TaskResponse getById(
-            @PathVariable UUID pid,
-            @PathVariable UUID tid
-    ) {
+	@GetMapping("/api/v1/projects/{pid}/tasks/{tid}")
+	public TaskResponse getById(@PathVariable UUID pid, @PathVariable UUID tid) {
 
-        return taskService.getById(pid, tid);
-    }
+		return taskService.getById(pid, tid);
+	}
 
-    @PutMapping("/api/v1/projects/{pid}/tasks/{tid}")
-    public TaskResponse update(
-            @PathVariable UUID pid,
-            @PathVariable UUID tid,
-            @Valid @RequestBody UpdateTaskRequest request
-    ) {
+	@PutMapping("/api/v1/projects/{pid}/tasks/{tid}")
+	public TaskResponse update(@PathVariable UUID pid, @PathVariable UUID tid,
+			@Valid @RequestBody UpdateTaskRequest request) {
 
-        return taskService.update(pid, tid, request);
-    }
+		return taskService.update(pid, tid, request);
+	}
 
-    @PatchMapping("/api/v1/projects/{pid}/tasks/{tid}/assign")
-    @PreAuthorize("hasRole('ADMIN')")
-    public TaskResponse assign(
-            @PathVariable UUID pid,
-            @PathVariable UUID tid,
-            @Valid @RequestBody AssignTaskRequest request
-    ) {
+	@PatchMapping("/api/v1/projects/{pid}/tasks/{tid}/assign")
+	@PreAuthorize("hasRole('ADMIN')")
+	public TaskResponse assign(@PathVariable UUID pid, @PathVariable UUID tid,
+			@Valid @RequestBody AssignTaskRequest request) {
 
-        return taskService.assign(pid, tid, request);
-    }
+		return taskService.assign(pid, tid, request);
+	}
 
-    @PatchMapping("/api/v1/projects/{pid}/tasks/{tid}/status")
-    public TaskResponse updateStatus(
-            @PathVariable UUID pid,
-            @PathVariable UUID tid,
-            @Valid @RequestBody UpdateTaskStatusRequest request
-    ) {
+	@PatchMapping("/api/v1/projects/{pid}/tasks/{tid}/status")
+	public TaskResponse updateStatus(@PathVariable UUID pid, @PathVariable UUID tid,
+			@Valid @RequestBody UpdateTaskStatusRequest request) {
 
-        return taskService.updateStatus(pid, tid, request);
-    }
+		return taskService.updateStatus(pid, tid, request);
+	}
 
-    @DeleteMapping("/api/v1/projects/{pid}/tasks/{tid}")
-    @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<Void> delete(
-            @PathVariable UUID pid,
-            @PathVariable UUID tid
-    ) {
+	@DeleteMapping("/api/v1/projects/{pid}/tasks/{tid}")
+	@PreAuthorize("hasRole('ADMIN')")
+	public ResponseEntity<Void> delete(@PathVariable UUID pid, @PathVariable UUID tid) {
 
-        taskService.delete(pid, tid);
+		taskService.delete(pid, tid);
 
-        return ResponseEntity.noContent().build();
-    }
+		return ResponseEntity.noContent().build();
+	}
 
-    @GetMapping("/api/v1/tasks/my-tasks")
-    public List<TaskResponse> myTasks() {
+	@GetMapping("/api/v1/tasks/my-tasks")
+	public List<TaskResponse> myTasks() {
 
-        return taskService.myTasks();
-    }
+		return taskService.myTasks();
+	}
 }
