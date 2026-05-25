@@ -1,0 +1,735 @@
+{
+  "info": {
+    "_postman_id": "c8324ac2-be88-439a-bc53-c815c06d9d0e",
+    "name": "Task Management System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "24939455"
+  },
+  "item": [
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "Me API",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhYTkxMjM3OC0zNTFmLTRiYmQtOWUzMS1mNGQwNGIyNzA1NjUiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc3OTcyMTU4NSwiZXhwIjoxNzc5ODA3OTg1fQ.GFD0me9TFdL2Q1ZkKlrIF451l23KFPSAvJDQ9lsFkLYQvtPqAf8H-d1ElfR2CQr_jicgIXrrU7ai_lyFXWQ27A",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseAuthServiceUrl}}/api/v1/users/me",
+              "host": [
+                "{{baseAuthServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get User By Id",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{authToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseAuthServiceUrl}}/api/v1/users/e2771fa5-9bb9-4d7c-9cb0-5d3c5d9c5d1a",
+              "host": [
+                "{{baseAuthServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "e2771fa5-9bb9-4d7c-9cb0-5d3c5d9c5d1a"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Users",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{authToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseAuthServiceUrl}}/api/v1/users",
+              "host": [
+                "{{baseAuthServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Project",
+      "item": [
+        {
+          "name": "Create Project",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{authToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"task creation -hk\",\n  \"description\": \"Testing for creation of project api\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseTaskServiceUrl}}/api/v1/projects",
+              "host": [
+                "{{baseTaskServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "projects"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Projects",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{authToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{baseTaskServiceUrl}}/api/v1/projects",
+              "host": [
+                "{{baseTaskServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "projects"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Project By Id",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{authToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{baseTaskServiceUrl}}/api/v1/projects/22c872ba-cd47-431f-aa74-bda0437784e4",
+              "host": [
+                "{{baseTaskServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "projects",
+                "22c872ba-cd47-431f-aa74-bda0437784e4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Project",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{authToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Updated name test\",\n  \"description\": \"is description updated?\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseTaskServiceUrl}}/api/v1/projects/22c872ba-cd47-431f-aa74-bda0437784e4",
+              "host": [
+                "{{baseTaskServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "projects",
+                "22c872ba-cd47-431f-aa74-bda0437784e4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Project By Id",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{authToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Updated name test\",\n  \"description\": \"is description updated?\"\n}"
+            },
+            "url": {
+              "raw": "{{baseTaskServiceUrl}}/api/v1/projects/22c872ba-cd47-431f-aa74-bda0437784e4",
+              "host": [
+                "{{baseTaskServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "projects",
+                "22c872ba-cd47-431f-aa74-bda0437784e4"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login API",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"user@test.com\",\n  \"password\": \"password123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseAuthServiceUrl}}/api/v1/auth/login",
+              "host": [
+                "{{baseAuthServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Register Users",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"user@test.com\",\n  \"password\": \"password123\",\n  \"fullName\": \"Regular User\",\n  \"role\": \"USER\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseAuthServiceUrl}}/api/v1/auth/register",
+              "host": [
+                "{{baseAuthServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Task",
+      "item": [
+        {
+          "name": "Get Task By Task id",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{authToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Updated JWT\",\n  \"description\": \"Updated description\",\n  \"priority\": \"MEDIUM\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseTaskServiceUrl}}/api/v1/projects/de5dcbf9-8f72-4b0a-8e9f-344a52876cb4/tasks/b0b417c2-b478-452d-9f85-b9e11b49b730",
+              "host": [
+                "{{baseTaskServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "projects",
+                "de5dcbf9-8f72-4b0a-8e9f-344a52876cb4",
+                "tasks",
+                "b0b417c2-b478-452d-9f85-b9e11b49b730"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Task",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{authToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Updated JWT\",\n  \"description\": \"Updated description\",\n  \"priority\": \"MEDIUM\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseTaskServiceUrl}}/api/v1/projects/de5dcbf9-8f72-4b0a-8e9f-344a52876cb4/tasks/b0b417c2-b478-452d-9f85-b9e11b49b730",
+              "host": [
+                "{{baseTaskServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "projects",
+                "de5dcbf9-8f72-4b0a-8e9f-344a52876cb4",
+                "tasks",
+                "b0b417c2-b478-452d-9f85-b9e11b49b730"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Tasks",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{authToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Updated JWT\",\n  \"description\": \"Updated description\",\n  \"priority\": \"MEDIUM\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseTaskServiceUrl}}/api/v1/projects/de5dcbf9-8f72-4b0a-8e9f-344a52876cb4/tasks",
+              "host": [
+                "{{baseTaskServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "projects",
+                "de5dcbf9-8f72-4b0a-8e9f-344a52876cb4",
+                "tasks"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter Tasks",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{authToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Updated JWT\",\n  \"description\": \"Updated description\",\n  \"priority\": \"MEDIUM\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseTaskServiceUrl}}/api/v1/projects/de5dcbf9-8f72-4b0a-8e9f-344a52876cb4/tasks?status=TODO",
+              "host": [
+                "{{baseTaskServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "projects",
+                "de5dcbf9-8f72-4b0a-8e9f-344a52876cb4",
+                "tasks"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "TODO"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Task",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{authToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Need to add docker and swagger in i have the time\",\n  \"description\": \"Add JWT auth\",\n  \"priority\": \"HIGH\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseTaskServiceUrl}}/api/v1/projects/de5dcbf9-8f72-4b0a-8e9f-344a52876cb4/tasks",
+              "host": [
+                "{{baseTaskServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "projects",
+                "de5dcbf9-8f72-4b0a-8e9f-344a52876cb4",
+                "tasks"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "My Tasks",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{authToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Need to add docker and swagger in i have the time\",\n  \"description\": \"Add JWT auth\",\n  \"priority\": \"HIGH\"\n}"
+            },
+            "url": {
+              "raw": "{{baseTaskServiceUrl}}/api/v1/tasks/my-tasks",
+              "host": [
+                "{{baseTaskServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "tasks",
+                "my-tasks"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Assign Task",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{authToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"assigneeUserId\":\"e2771fa5-9bb9-4d7c-9cb0-5d3c5d9c5d1a\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseTaskServiceUrl}}/api/v1/projects/de5dcbf9-8f72-4b0a-8e9f-344a52876cb4/tasks/eec41537-46bf-4300-b316-718a34146617/assign",
+              "host": [
+                "{{baseTaskServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "projects",
+                "de5dcbf9-8f72-4b0a-8e9f-344a52876cb4",
+                "tasks",
+                "eec41537-46bf-4300-b316-718a34146617",
+                "assign"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Tasks",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{authToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{baseTaskServiceUrl}}/api/v1/projects/de5dcbf9-8f72-4b0a-8e9f-344a52876cb4/tasks/eec41537-46bf-4300-b316-718a34146617",
+              "host": [
+                "{{baseTaskServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "projects",
+                "de5dcbf9-8f72-4b0a-8e9f-344a52876cb4",
+                "tasks",
+                "eec41537-46bf-4300-b316-718a34146617"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Task Status Update",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{authToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"TODO\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseTaskServiceUrl}}/api/v1/projects/de5dcbf9-8f72-4b0a-8e9f-344a52876cb4/tasks/f51d3394-6411-479a-a2eb-c1c4a68039ab/status",
+              "host": [
+                "{{baseTaskServiceUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "projects",
+                "de5dcbf9-8f72-4b0a-8e9f-344a52876cb4",
+                "tasks",
+                "f51d3394-6411-479a-a2eb-c1c4a68039ab",
+                "status"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
