@@ -172,6 +172,26 @@ http://localhost:8082
 
 ---
 
+# Docker Setup(optional)
+
+## Build and Run
+
+```bash
+docker compose up --build
+```
+
+---
+
+## Services
+
+| Service | Port |
+|---|---|
+| auth-service | 8081 |
+| task-service | 8082 |
+| auth-db | 5433 |
+| task-db | 5434 |
+
+
 # Authentication Flow
 
 1. Register user
